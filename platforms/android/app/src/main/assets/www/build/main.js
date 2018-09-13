@@ -86,7 +86,7 @@ var HomePage = /** @class */ (function () {
         this.isScanning = true;
         this.devices = [];
         this.ble.scan([], 6).subscribe(function (device) { _this.onDeviceDiscovered(device); }, function (error) { });
-        setTimeout(function () { _this.isScanning = false; _this.setMessage("Impossible de se conncter, réessayez"); }, 6000);
+        setTimeout(function () { _this.isScanning = false; _this.setMessage("Impossible de se connecter, réessayez"); }, 6000);
     };
     HomePage.prototype.setMessage = function (message) {
         var _this = this;
@@ -115,7 +115,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/louis/ionic_projects/poolights/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Poolights\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-buttons end>\n    <button ion-button round class="button1" *ngIf="(isScanning === false) && (isFirstScan === false)" (click)="scanning()">\n      Retry\n    </button>\n    <ion-spinner class="spinner1" name="bubbles" *ngIf="isScanning === true">\n    </ion-spinner>\n  </ion-buttons>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <p>{{ statusMessage }}</p>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/home/louis/ionic_projects/poolights/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/louis/ionic_projects/poolights/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Poolights\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="water">\n  <ion-buttons end>\n    <button ion-button round class="button1" *ngIf="(isScanning === false) && (isFirstScan === false)" (click)="scanning()">\n      Retry\n    </button>\n    <ion-spinner class="spinner1" name="bubbles" *ngIf="isScanning === true">\n    </ion-spinner>\n  </ion-buttons>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <p>{{ statusMessage }}</p>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/home/louis/ionic_projects/poolights/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */] /**, private toastCtrl: ToastController*/])
     ], HomePage);

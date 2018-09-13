@@ -41,7 +41,7 @@ export class HomePage
       error => {}
     );
 
-    setTimeout(()=>{this.isScanning = false; this.setMessage("Impossible de se conncter, réessayez");}, 6000);
+    setTimeout(()=>{this.isScanning = false; this.setMessage("Impossible de se connecter, réessayez");}, 6000);
   }
 
   setMessage(message)

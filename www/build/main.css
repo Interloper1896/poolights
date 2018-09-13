@@ -25682,12 +25682,19 @@ page-home .button1 {
   border-radius: 50%;
   margin: auto;
   display: block;
-  padding: 50px;
-  margin-top: 50%;
+  height: 100px;
+  width: 100px;
+  margin-top: 40%;
+  background-color: #66E8D3;
 }
 
 page-home .spinner1 {
   margin: auto;
   display: block;
   margin-top: 50%;
+}
+
+page-home .water {
+  background-image: url("../../assets/imgs/water1.jpg");
+  background-size: cover;
 }
