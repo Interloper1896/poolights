@@ -1,18 +1,36 @@
-<!--
-  Generated template for the OnDevicePage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>onDevice</ion-title>
+<ion-header class="secondColor">
+  <ion-navbar transparent>
+    <ion-title>
+        <i><b>P O O L I G H T S</b></i>
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding class="water">
+    <ion-list>
 
+        <ion-item>
+          <ion-label>Red</ion-label>
+          <ion-toggle [(ngModel)]="colors.red" (ionChange)="updatedColors()" color="red"></ion-toggle>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Green</ion-label>
+          <ion-toggle [(ngModel)]="colors.green" (ionChange)="updatedColors()" color="green"></ion-toggle>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label>Blue</ion-label>
+          <ion-toggle [(ngModel)]="colors.blue" (ionChange)="updatedColors()" color="blue"></ion-toggle>
+        </ion-item>
+      
+      </ion-list>
 </ion-content>
+
+<ion-footer class="secondColor">
+  <ion-toolbar transparent>
+    <p>Choose you color!</p>
+  </ion-toolbar>
+</ion-footer>

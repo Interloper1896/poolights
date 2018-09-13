@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Sep 13 16:42:25 CEST 2018
+#Thu Sep 13 18:42:14 CEST 2018
 76.base=/home/louis/projects/poolights/ionic/platforms/android/app/build/intermediates/res/debug/resources-debug.ap_
 5.base=/home/louis/projects/poolights/ionic/platforms/android/app/build/intermediates/res/debug/resources-debug.ap_
 42.base=/home/louis/projects/poolights/ionic/platforms/android/app/build/intermediates/assets/debug

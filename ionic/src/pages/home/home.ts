@@ -33,7 +33,7 @@ export class HomePage
 
   scanning()
   {
-    this.setMessage("Scan en cours...");
+    this.setMessage("Scanning...");
     this.isScanning = true;
     this.devices = [];
     this.ble.scan([], 6).subscribe(
@@ -41,7 +41,7 @@ export class HomePage
       error => {}
     );
 
-    setTimeout(()=>{this.isScanning = false; this.setMessage("Impossible de se connecter, réessayez");}, 6000);
+    setTimeout(()=>{this.isScanning = false; this.setMessage("Impossible to connect, please try again");}, 6000);
   }
 
   setMessage(message)

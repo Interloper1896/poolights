@@ -25686,6 +25686,7 @@ page-home .button1 {
   width: 100px;
   margin-top: 40%;
   background-color: #66E8D3;
+  color: #fff9e1;
 }
 
 page-home .spinner1 {
@@ -25695,6 +25696,19 @@ page-home .spinner1 {
 }
 
 page-home .water {
+  background-image: url("../../assets/imgs/water1.jpg");
+  background-size: cover;
+}
+
+page-home .secondColor {
+  background-color: #fff9e1;
+}
+
+page-on-device .secondColor {
+  background-color: #fff9e1;
+}
+
+page-on-device .water {
   background-image: url("../../assets/imgs/water1.jpg");
   background-size: cover;
 }

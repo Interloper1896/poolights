@@ -9,6 +9,7 @@ page-home {
         width: 100px;
         margin-top: 40%;
         background-color: #66E8D3;
+        color: #fff9e1;
     }
 
     .spinner1 {
@@ -20,6 +21,10 @@ page-home {
     .water {
         background-image: url('../../assets/imgs/water1.jpg');
         background-size: cover;
+    }
+
+    .secondColor {
+        background-color: #fff9e1;
     }
 
 }
