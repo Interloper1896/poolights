@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Poolights
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="water">
+  <ion-buttons end>
+    <button ion-button round class="button1" *ngIf="(isScanning === false) && (isFirstScan === false)" (click)="scanning()">
+      Retry
+    </button>
+    <ion-spinner class="spinner1" name="bubbles" *ngIf="isScanning === true">
+    </ion-spinner>
+  </ion-buttons>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <p>{{ statusMessage }}</p>
+  </ion-toolbar>
+</ion-footer>
