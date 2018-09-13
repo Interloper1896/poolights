@@ -14,7 +14,7 @@ export class HomePage
 {
 
   devices: any[] = [];
-  deviceID: string = 'poolights1';
+  //deviceID: string = 'poolights1';
   deviceName: string = 'poolights1';
   statusMessage: string;
   isScanning: boolean;
@@ -41,7 +41,7 @@ export class HomePage
       error => {}
     );
 
-    setTimeout(()=>{this.isScanning = false; this.setMessage("Impossible to connect, please try again");}, 6000);
+    setTimeout(()=>{this.isScanning = false; this.setMessage("Unable to connect, please try again");}, 6000);
   }
 
   setMessage(message)
@@ -52,7 +52,7 @@ export class HomePage
   onDeviceDiscovered(device)
   {
     this.ngZone.run(()=>{ this.devices.push(device); 
-                          if((device.id === this.deviceID) && (device.name === this.deviceName)) 
+                          if(/**(device.id === this.deviceID) &&*/ (device.name === this.deviceName)) 
                             this.connecting(device);
                             this.ble.stopScan();
                         });

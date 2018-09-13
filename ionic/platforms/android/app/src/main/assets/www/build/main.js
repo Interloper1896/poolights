@@ -71,7 +71,7 @@ var HomePage = /** @class */ (function () {
         this.ble = ble;
         this.ngZone = ngZone; /**, private toastCtrl: ToastController*/
         this.devices = [];
-        this.deviceID = 'poolights1';
+        //deviceID: string = 'poolights1';
         this.deviceName = 'poolights1';
         this.peripheral = {};
         this.ble.enable();
@@ -86,7 +86,7 @@ var HomePage = /** @class */ (function () {
         this.isScanning = true;
         this.devices = [];
         this.ble.scan([], 6).subscribe(function (device) { _this.onDeviceDiscovered(device); }, function (error) { });
-        setTimeout(function () { _this.isScanning = false; _this.setMessage("Impossible to connect, please try again"); }, 6000);
+        setTimeout(function () { _this.isScanning = false; _this.setMessage("Unable to connect, please try again"); }, 6000);
     };
     HomePage.prototype.setMessage = function (message) {
         var _this = this;
@@ -96,7 +96,7 @@ var HomePage = /** @class */ (function () {
         var _this = this;
         this.ngZone.run(function () {
             _this.devices.push(device);
-            if ((device.id === _this.deviceID) && (device.name === _this.deviceName))
+            if ((device.name === _this.deviceName))
                 _this.connecting(device);
             _this.ble.stopScan();
         });
@@ -115,7 +115,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/louis/projects/poolights/ionic/src/pages/home/home.html"*/'<ion-header class="secondColor">\n  <ion-navbar transparent>\n    <ion-title>\n        <i><b>P O O L I G H T S</b></i>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="water">\n  <ion-buttons end>\n    <button ion-button round class="button1" *ngIf="(isScanning === false) && (isFirstScan === false)" (click)="scanning()">\n      Retry\n    </button>\n    <ion-spinner class="spinner1" name="bubbles" *ngIf="isScanning === true">\n    </ion-spinner>\n  </ion-buttons>\n</ion-content>\n\n<ion-footer class="secondColor">\n  <ion-toolbar transparent>\n    <p>{{ statusMessage }}</p>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/home/louis/projects/poolights/ionic/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/louis/projects/poolights/ionic/src/pages/home/home.html"*/'<ion-header class="secondBackgroungColor">\n  <ion-navbar transparent>\n    <ion-title>\n        <p class="secondFontColor"><i><b>P O O L I G H T S</b></i></p>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="water">\n  <ion-buttons end>\n    <button ion-button round class="button1" *ngIf="(isScanning === false) && (isFirstScan === false)" (click)="scanning()">\n      Retry\n    </button>\n    <ion-spinner class="spinner1" name="bubbles" *ngIf="isScanning === true">\n    </ion-spinner>\n  </ion-buttons>\n</ion-content>\n\n<ion-footer class="secondBackgroungColor">\n  <ion-toolbar transparent>\n    <p class="secondFontColor">{{ statusMessage }}</p>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/home/louis/projects/poolights/ionic/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */] /**, private toastCtrl: ToastController*/])
     ], HomePage);
@@ -151,6 +151,8 @@ var OnDevicePage = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.ble = ble;
+        this.serviceUUID = "6E400001-B5A3-F393-E0A9-E50E24DCCA9E";
+        this.characteristicColorUUID = "6E400002-B5A3-F393-E0A9-E50E24DCCA9E";
         this.peripheral = {};
         this.colors = {
             red: false,
@@ -171,7 +173,7 @@ var OnDevicePage = /** @class */ (function () {
     };
     OnDevicePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-on-device',template:/*ion-inline-start:"/home/louis/projects/poolights/ionic/src/pages/on-device/on-device.html"*/'\n<ion-header class="secondColor">\n  <ion-navbar transparent>\n    <ion-title>\n        <i><b>P O O L I G H T S</b></i>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="water">\n    <ion-list>\n\n        <ion-item>\n          <ion-label>Red</ion-label>\n          <ion-toggle [(ngModel)]="colors.red" (ionChange)="updatedColors()" color="red"></ion-toggle>\n        </ion-item>\n      \n        <ion-item>\n          <ion-label>Green</ion-label>\n          <ion-toggle [(ngModel)]="colors.green" (ionChange)="updatedColors()" color="green"></ion-toggle>\n        </ion-item>\n      \n        <ion-item>\n          <ion-label>Blue</ion-label>\n          <ion-toggle [(ngModel)]="colors.blue" (ionChange)="updatedColors()" color="blue"></ion-toggle>\n        </ion-item>\n      \n      </ion-list>\n</ion-content>\n\n<ion-footer class="secondColor">\n  <ion-toolbar transparent>\n    <p>Choose you color!</p>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/home/louis/projects/poolights/ionic/src/pages/on-device/on-device.html"*/,
+            selector: 'page-on-device',template:/*ion-inline-start:"/home/louis/projects/poolights/ionic/src/pages/on-device/on-device.html"*/'\n<ion-header class="secondColor">\n  <ion-navbar transparent>\n    <ion-title>\n      <p class="secondFontColor"><i><b>P O O L I G H T S</b></i></p>\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding class="water">\n    <ion-list>\n\n        <ion-item>\n          <ion-label>Red</ion-label>\n          <ion-toggle [(ngModel)]="colors.red" (ionChange)="updatedColors()" color="red"></ion-toggle>\n        </ion-item>\n      \n        <ion-item>\n          <ion-label>Green</ion-label>\n          <ion-toggle [(ngModel)]="colors.green" (ionChange)="updatedColors()" color="green"></ion-toggle>\n        </ion-item>\n      \n        <ion-item>\n          <ion-label>Blue</ion-label>\n          <ion-toggle [(ngModel)]="colors.blue" (ionChange)="updatedColors()" color="blue"></ion-toggle>\n        </ion-item>\n      \n      </ion-list>\n</ion-content>\n\n<ion-footer class="secondColor">\n  <ion-toolbar transparent>\n    <p class="secondFontColor">Choose you color!</p>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/home/louis/projects/poolights/ionic/src/pages/on-device/on-device.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */]])
     ], OnDevicePage);

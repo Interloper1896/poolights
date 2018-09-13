@@ -10,8 +10,8 @@ import { BLE } from '@ionic-native/ble';
 })
 export class OnDevicePage {
 
-  serviceUUID: string;
-  characteristicColorUUID: string;
+  serviceUUID: string = "6E400001-B5A3-F393-E0A9-E50E24DCCA9E";
+  characteristicColorUUID: string = "6E400002-B5A3-F393-E0A9-E50E24DCCA9E";
   peripheral: any = {};
 
   colors = {

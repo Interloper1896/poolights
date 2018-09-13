@@ -25700,12 +25700,21 @@ page-home .water {
   background-size: cover;
 }
 
-page-home .secondColor {
+page-home .secondBackgroungColor {
   background-color: #fff9e1;
+}
+
+page-home .secondFontColor {
+  color: #d2b541;
 }
 
 page-on-device .secondColor {
   background-color: #fff9e1;
+  color: #d2b541;
+}
+
+page-on-device .secondFontColor {
+  color: #d2b541;
 }
 
 page-on-device .water {

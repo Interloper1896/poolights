@@ -1,19 +1,16 @@
-#include <ELECHOUSE_CC1101.h>
 #include <BLEDevice.h>
 #include <BLEServer.h>
 #include <BLEUtils.h>
 #include <BLE2902.h>
 
-const int n = 22;
-byte buffer[n]  = {0, 0, 4, 146, 73, 37, 182, 89, 101, 182, 201, 36, 178, 201, 44, 146, 75, 109, 178, 64, 0, 0};
-int len = 22;
 
 BLECharacteristic *pCharacteristic;
 bool deviceConnected = false;
 float txValue = 0;
+char deviceName[20] = "poolights1";
 
 
-#define SERVICE_UUID           "6E400001-B5A3-F393-E0A9-E50E24DCCA9E" // UART service UUID
+#define SERVICE_UUID           "6E400001-B5A3-F393-E0A9-E50E24DCCA9E"
 #define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
 #define CHARACTERISTIC_UUID_TX "6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
 
@@ -37,16 +34,12 @@ class MyCallbacks: public BLECharacteristicCallbacks
     {
       std::string rxValue = pCharacteristic->getValue();
 
-      if (rxValue.length() > 0)
+      if (rxValue.length() == 3)
       {
         // Do stuff based on the command received from the app
-        if (rxValue.find("A") != -1)
-        { 
-          for (int i = 0; i < 10; i++)
-          {
-            ELECHOUSE_cc1101.SendData(buffer, len);
-          }
-        }
+        (rxValue[0] == 'y') ? Serial.print("red_on") : Serial.print("red_off");
+        (rxValue[1] == 'y') ? Serial.print("green_on") : Serial.print("green_off");
+        (rxValue[2] == 'y') ? Serial.print("blue_on\n") : Serial.print("blue_off\n");
       }
     }
 };
@@ -55,11 +48,8 @@ class MyCallbacks: public BLECharacteristicCallbacks
 
 void setup() 
 { 
-  ELECHOUSE_cc1101.Init(F_868);
-
-
   // Create the BLE Device
-  BLEDevice::init("ESP32"); // Give it a name
+  BLEDevice::init(deviceName); // Give it a name
 
   // Create the BLE Server
   BLEServer *pServer = BLEDevice::createServer();
@@ -91,6 +81,3 @@ void setup()
 }
 
 void loop() {}
-
-
-
