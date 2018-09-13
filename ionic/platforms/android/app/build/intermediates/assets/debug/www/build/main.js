@@ -115,7 +115,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/louis/ionic_projects/poolights/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Poolights\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="water">\n  <ion-buttons end>\n    <button ion-button round class="button1" *ngIf="(isScanning === false) && (isFirstScan === false)" (click)="scanning()">\n      Retry\n    </button>\n    <ion-spinner class="spinner1" name="bubbles" *ngIf="isScanning === true">\n    </ion-spinner>\n  </ion-buttons>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <p>{{ statusMessage }}</p>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/home/louis/ionic_projects/poolights/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/home/louis/projects/poolights/ionic/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Poolights\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="water">\n  <ion-buttons end>\n    <button ion-button round class="button1" *ngIf="(isScanning === false) && (isFirstScan === false)" (click)="scanning()">\n      Retry\n    </button>\n    <ion-spinner class="spinner1" name="bubbles" *ngIf="isScanning === true">\n    </ion-spinner>\n  </ion-buttons>\n</ion-content>\n\n<ion-footer>\n  <ion-toolbar>\n    <p>{{ statusMessage }}</p>\n  </ion-toolbar>\n</ion-footer>\n'/*ion-inline-end:"/home/louis/projects/poolights/ionic/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_ble__["a" /* BLE */], __WEBPACK_IMPORTED_MODULE_0__angular_core__["M" /* NgZone */] /**, private toastCtrl: ToastController*/])
     ], HomePage);
@@ -160,7 +160,7 @@ var OnDevicePage = /** @class */ (function () {
     };
     OnDevicePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-on-device',template:/*ion-inline-start:"/home/louis/ionic_projects/poolights/src/pages/on-device/on-device.html"*/'<!--\n  Generated template for the OnDevicePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>onDevice</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/louis/ionic_projects/poolights/src/pages/on-device/on-device.html"*/,
+            selector: 'page-on-device',template:/*ion-inline-start:"/home/louis/projects/poolights/ionic/src/pages/on-device/on-device.html"*/'<!--\n  Generated template for the OnDevicePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>onDevice</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/louis/projects/poolights/ionic/src/pages/on-device/on-device.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], OnDevicePage);
@@ -284,7 +284,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/louis/ionic_projects/poolights/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/louis/ionic_projects/poolights/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/louis/projects/poolights/ionic/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/louis/projects/poolights/ionic/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
