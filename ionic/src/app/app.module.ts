@@ -7,11 +7,13 @@ import { BLE } from '@ionic-native/ble';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { OnDevicePage } from '../pages/on-device/on-device';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    OnDevicePage
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,8 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    OnDevicePage
   ],
   providers: [
     StatusBar,

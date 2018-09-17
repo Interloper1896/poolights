@@ -9,21 +9,21 @@
 
 
 <ion-content padding class="water">
-    <ion-list>
+    <ion-list transparent>
 
-        <ion-item>
-          <ion-label>Red</ion-label>
-          <ion-toggle [(ngModel)]="colors.red" (ionChange)="updatedColors()" color="red"></ion-toggle>
+        <ion-item color="light">
+          <ion-label color="danger">Red</ion-label>
+          <ion-toggle [(ngModel)]="colors.red" (ionChange)="updatedColors()" color="danger"></ion-toggle>
         </ion-item>
       
-        <ion-item>
-          <ion-label>Green</ion-label>
-          <ion-toggle [(ngModel)]="colors.green" (ionChange)="updatedColors()" color="green"></ion-toggle>
+        <ion-item color="light">
+          <ion-label color="secondary">Green</ion-label>
+          <ion-toggle [(ngModel)]="colors.green" (ionChange)="updatedColors()" color="secondary"></ion-toggle>
         </ion-item>
       
-        <ion-item>
-          <ion-label>Blue</ion-label>
-          <ion-toggle [(ngModel)]="colors.blue" (ionChange)="updatedColors()" color="blue"></ion-toggle>
+        <ion-item color="light">
+          <ion-label color="primary">Blue</ion-label>
+          <ion-toggle [(ngModel)]="colors.blue" (ionChange)="updatedColors()" color="primary"></ion-toggle>
         </ion-item>
       
       </ion-list>

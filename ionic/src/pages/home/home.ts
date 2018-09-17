@@ -36,12 +36,12 @@ export class HomePage
     this.setMessage("Scanning...");
     this.isScanning = true;
     this.devices = [];
-    this.ble.scan([], 6).subscribe(
-      device => {this.onDeviceDiscovered(device)},
+    this.ble.scan([], 7).subscribe(         // La géolocalisation doit être activée pour ma version d'Android, un bug de chez eux
+      device => {this.onDeviceDiscovered(device);},
       error => {}
     );
 
-    setTimeout(()=>{this.isScanning = false; this.setMessage("Unable to connect, please try again");}, 6000);
+    setTimeout(()=>{this.isScanning = false; this.setMessage("Unable to connect, please try again");}, 7000);
   }
 
   setMessage(message)
@@ -55,17 +55,20 @@ export class HomePage
                           if(/**(device.id === this.deviceID) &&*/ (device.name === this.deviceName)) 
                             this.connecting(device);
                             this.ble.stopScan();
+                            this.setMessage("Found it!");
                         });
   }
 
   connecting(device)
   {
     this.isScanning = false;
+    this.setMessage("Connecting...");
     this.ble.connect(device.id).subscribe(peripheral=>this.onConnected(peripheral));
   }
 
   onConnected(peripheral)
   {
+    this.setMessage("Connected!");
     this.ngZone.run(()=>{ this.peripheral = peripheral;
                           this.navCtrl.push(OnDevicePage, {peripheral: peripheral})});
   }
